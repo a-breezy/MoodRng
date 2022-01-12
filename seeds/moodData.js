@@ -5,10 +5,10 @@ const moodData = [
     mood_name: 'Happy',
   },
   {
-    mood_emoji: 'Shorts',
+    mood_emoji: 'Smile',
   },
   {
-    mood_color: 'Music',
+    mood_color: 'Blue',
   }
 ];
 
