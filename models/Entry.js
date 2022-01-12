@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const sequelize = require("../config/connection.js");
 
 class Entry extends Model {}
 
@@ -20,7 +20,7 @@ Entry.init(
 			allowNull: false,
 		},
 		sleep: {
-			type: DataTypes.STRING,
+			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
 		food: {
@@ -30,11 +30,12 @@ Entry.init(
 		activities: {
 			type: DataTypes.STRING,
 			allowNull: false,
-		},
-		description: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
+		}
+		// // Add date attribute?
+		// entry_date: {
+		// 	type: DataTypes.NUMBER,
+		// 	allowNull: false,
+		// },
 	},
 	{
 		sequelize,
