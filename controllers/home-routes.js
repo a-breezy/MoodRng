@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
-// Import the custom middleware
+const { Mood, Entry } = require('../models');
+
+// Import the custom middleware ---> WHAT DOES THIS DO?
 const withAuth = require('../utils/auth');
 
 // GET all galleries for homepage
