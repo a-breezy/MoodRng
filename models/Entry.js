@@ -15,10 +15,10 @@ Entry.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		// mood: {
-		// 	type: DataTypes.STRING,
-		// 	allowNull: false,
-		// },
+		mood: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
 		sleep: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
