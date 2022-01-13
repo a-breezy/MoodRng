@@ -23,7 +23,6 @@ User.init(
 		first_name: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			unique: true,
 			validate: {
 				isFirstName: true,
 			},
@@ -31,7 +30,6 @@ User.init(
 		last_name: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			unique: true,
 			validate: {
 				isLastName: true,
 			},

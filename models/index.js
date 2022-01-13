@@ -11,11 +11,11 @@ Entry.belongsTo(User, {
 });
 
 Entry.hasOne(Mood, {
-	foreign: "mood_id",
+	foreignKey: "mood_id",
 });
 
 Mood.belongsTo(Entry, {
-	foreign: "mood_id",
+	foreignKey: "mood_id",
 });
 
 module.exports = { User, Entry, Mood };
