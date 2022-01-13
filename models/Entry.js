@@ -15,10 +15,10 @@ Entry.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		mood: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
+		// mood: {
+		// 	type: DataTypes.STRING,
+		// 	allowNull: false,
+		// },
 		sleep: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
@@ -31,11 +31,6 @@ Entry.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 		}
-		// // Add date attribute?
-		// entry_date: {
-		// 	type: DataTypes.NUMBER,
-		// 	allowNull: false,
-		// },
 	},
 	{
 		sequelize,

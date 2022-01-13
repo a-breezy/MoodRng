@@ -31,6 +31,7 @@ Mood.init(
 		freezeTableName: true,
 		underscored: true,
 		modelName: "mood",
+		timestamps: false
 	}
 );
 

@@ -2,26 +2,31 @@ const { Entry } = require('../models');
 
 const entryData = [
   {
+    id: 1,
     username:'USER1',
-  },
-  {
-    mood: 'Happy',
-  },
-  {
     sleep: 8,
+    food:'Pizza',
+    activities:'Run',
   },
-  {
-    food: 'Pizza',
-  },
-  {
-    activities: 'Run',
-  },
+  // {
+  //   sleep: 8,
+  // },
+  // {
+  //   food:'Pizza',
+  // },
+  // {
+  //   activities:'Run',
+  // },
 ];
 
 // what is this doing?
 const seedEntry = () => Entry.bulkCreate(entryData);
 
 module.exports = seedEntry;
+
+  // {
+  //   mood_name:'Happy',
+  // },
 
 
 
