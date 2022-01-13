@@ -15,12 +15,14 @@ Mood.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
+		// does DataType need to change for emoji?
 		mood_emoji: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
+		//Check on datatype for mood color--string?
 		mood_color: {
-			type: DataTypes.DATE,
+			type: DataTypes.STRING,
 			allowNull: false,
 		},
 	},
@@ -29,6 +31,7 @@ Mood.init(
 		freezeTableName: true,
 		underscored: true,
 		modelName: "mood",
+		timestamps: false
 	}
 );
 

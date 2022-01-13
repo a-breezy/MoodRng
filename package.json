@@ -1,12 +1,14 @@
 {
-  "name": "museum-paintings",
+  "name": "mood_db",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/index.js",
+    "heroku-postinstall": "npm run seed"
+
   },
   "author": "",
   "license": "ISC",
