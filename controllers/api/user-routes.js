@@ -1,3 +1,6 @@
+// Routes for new account/login/logout are all good
+// TO DO link to landing page
+
 const router = require("express").Router();
 const { User } = require("../../models");
 

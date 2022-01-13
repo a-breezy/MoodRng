@@ -11,12 +11,12 @@ Entry.init(
 			primaryKey: true,
 			autoIncrement: true,
 		},
-		username: {
-			type: DataTypes.STRING,
+		user_id: {
+			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-		mood: {
-			type: DataTypes.STRING,
+		mood_id: {
+			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
 		sleep: {
