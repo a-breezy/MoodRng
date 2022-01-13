@@ -3,11 +3,11 @@ const Entry = require('./Entry');
 const Mood = require('./Mood');
 
 Entry.hasMany(Mood, {
-  foreignKey: 'gallery_id',
+  foreignKey: 'mood_id',
 });
 
 Mood.belongsTo(Entry, {
-  foreignKey: 'gallery_id',
+  foreignKey: '',
 });
 
 module.exports = { User, Entry, Mood };
