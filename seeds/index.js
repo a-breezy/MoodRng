@@ -9,14 +9,15 @@ const sequelize = require('../config/connection');
 const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
+  
   await seedEntry();
-  console.log('\n----- CATEGORIES SEEDED -----\n');
+  console.log('\n----- ENTRY TABLE SEEDED -----\n');
 
   await seedMood();
-  console.log('\n----- PRODUCTS SEEDED -----\n');
+  console.log('\n----- MOOD TABLE SEEDED -----\n');
 
   await seedUser();
-  console.log('\n----- TAGS SEEDED -----\n');
+  console.log('\n----- USER TABLE SEEDED -----\n');
   
 // what is this doing?
   process.exit(0);

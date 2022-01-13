@@ -2,14 +2,17 @@ const { Mood } = require('../models');
 
 const moodData = [
   {
+    id: 1,
     mood_name: 'Happy',
+    mood_emoji: 'Smile',
+    mood_color: 'Blue',
   },
-  {
-    mood_emoji: 'Shorts',
-  },
-  {
-    mood_color: 'Music',
-  }
+  // {
+  //   mood_emoji: 'Smile',
+  // },
+  // {
+  //   mood_color: 'Blue',
+  // }
 ];
 
 // what is this doing?
