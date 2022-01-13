@@ -15,10 +15,10 @@ Entry.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		// mood: {
-		// 	type: DataTypes.STRING,
-		// 	allowNull: false,
-		// },
+		mood_id: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
 		sleep: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
@@ -30,10 +30,11 @@ Entry.init(
 		activities: {
 			type: DataTypes.STRING,
 			allowNull: false,
-		}
+		},
 	},
 	{
 		sequelize,
+		timestamps: true,
 		freezeTableName: true,
 		underscored: true,
 		modelName: "entry",
