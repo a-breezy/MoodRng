@@ -1,22 +1,23 @@
-const { Entry } = require('../models');
+const { Entry } = require("../models");
 
 const entryData = [
-  {
-    id: 1,
-    username:'USER1',
-    sleep: 8,
-    food:'Pizza',
-    activities:'Run',
-  },
-  // {
-  //   sleep: 8,
-  // },
-  // {
-  //   food:'Pizza',
-  // },
-  // {
-  //   activities:'Run',
-  // },
+	{
+		id: 1,
+		username: "USER1",
+		mood_id: 2,
+		sleep: 8,
+		food: "Pizza",
+		activities: "Run",
+	},
+	// {
+	//   sleep: 8,
+	// },
+	// {
+	//   food:'Pizza',
+	// },
+	// {
+	//   activities:'Run',
+	// },
 ];
 
 // what is this doing?
@@ -24,31 +25,9 @@ const seedEntry = () => Entry.bulkCreate(entryData);
 
 module.exports = seedEntry;
 
-  // {
-  //   mood_name:'Happy',
-  // },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// {
+//   mood_name:'Happy',
+// },
 
 // const sequelize = require('../config/connection');
 // const seedGallery = require('./galleryData');
