@@ -1,7 +1,7 @@
 const router = require('express').Router();
 // FOR THE HOMEPAGE, WE WILL REQUIRE ATRIBUTES FOUND ON THE USER, MOOD, AND ENTRY MODELS FILE
-const { Gallery, Painting, Entry } = require('../models');
-// Import the custom middleware
+const { Mood, Entry } = require('../models');
+// Import the custom middleware ---> WHAT DOES THIS DO?
 const withAuth = require('../utils/auth');
 
 // GET ALL ENTRIES FOR AN INDIVDUAL USER
