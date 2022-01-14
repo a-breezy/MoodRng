@@ -10,14 +10,14 @@ router.get("/", async (req, res) => {
 		// NEED TO CHANGE THIS TO THE NAME OF THE DATABASE FOR THE VARIABLE NAME, AND AWAIT ON ENTRY.FINDALL...THIS WILL BE USED TO POPULATE GRAPH
 		const dbMoodData = await Entry.findAll();
 		// THESE SHOULD ALL BE CHANGED TO ENTRY, THE DB TO THE DATABASE VARIABLE NAMED ABOVE
-		const entries = dbMoodData.map((gallery) =>
-			// WHAT DOES PLAIN: TRUE DO?
-			Entry.get({ plain: true })
-		);
+		// const entries = dbMoodData.map((gallery) =>
+		// 	// WHAT DOES PLAIN: TRUE DO?
+		// 	Entry.get({ plain: true })
+		// );
 
 		// WE need to create user_page in handlebars for user to login and see this stuff
 		res.render("homepage", {
-			entries,
+			dbMoodData,
 			loggedIn: req.session.loggedIn,
 		});
 	} catch (err) {
@@ -66,17 +66,18 @@ router.post("/entry", async (req, res) => {
 		// NEED TO CHANGE THIS TO THE NAME OF THE DATABASE FOR THE VARIABLE NAME
 		const dbMoodData = await Entry.create({
 			username: req.body.username,
-			mood_id: req.body.mood_id,
-			sleep: req.body.sleep,
+			mood_id: Number(req.body.mood_id),
+			sleep: Number(req.body.sleep),
 			food: req.body.food,
 			activities: req.body.activities,
 		});
 
-		req.session.save(() => {
+		req.session.save(async() => {
 			req.session.loggedIn = true;
-
-			res.status(200).json(dbMoodData);
+			res.status(200).render("success");
+			
 		});
+
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
