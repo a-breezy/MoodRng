@@ -1,26 +1,9 @@
 
 
-<form action="/entry" method="post" class="form-example">
-  <div class="form-example">
-    <label for="mood_id">Enter your name: </label>
-    <input type="number" value="1" name="mood_id" id="name" required>
-  </div>
-  <div class="form-example">
-    <label for="username">Enter your name: </label>
-    <input type="text" name="username" id="name" required>
-  </div>
-  {{!-- <select name="pets" id="pet-select">
-    <option value="">--Please choose an option--</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="hamster">Hamster</option>
-    <option value="parrot">Parrot</option>
-    <option value="spider">Spider</option>
-    <option value="goldfish">Goldfish</option>
-</select> --}}
+<form action="/entry" method="post" class="entry">
   <div class="form-example">
     <label for="sleep">Sleep:</label>
-    <input type="number" value="2" name="sleep" id="email" required>
+    <input type="number" value="2" name="sleep" id="sleep" required>
   </div>
   <div class="form-example">
     <label for="food">Food:</label>
@@ -34,15 +17,17 @@
     <label for="mood">Mood:</label>
     <select id="mood-select">
     <option value="">--Please choose an option--</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="hamster">Hamster</option>
-    <option value="parrot">Parrot</option>
-    <option value="spider">Spider</option>
-    <option value="goldfish">Goldfish</option>
-  </div>
+    <option value="1">Happy</option>
+    <option value="2">Sad</option>
+    <option value="3">Hamster</option>
+    <option value="4">Parrot</option>
+    <option value="5">Spider</option>
+    <option value="6">Goldfish</option>
+    </select>
   </div>
   <div class="form-example">
     <input type="submit" value="Subscribe!">
   </div>
 </form>
+
+<script src="./js/entry.js"></script>

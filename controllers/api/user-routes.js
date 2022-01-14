@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-// CREATE new user
+// CREATE new user--WORKING!!!
 router.post("/", async (req, res) => {
 	try {
 		const dbUserData = await User.create({
@@ -23,24 +23,25 @@ router.post("/", async (req, res) => {
 	}
 });
 
-router.get("/", (req, res) => {
-	User.findAll({
-	  attributes: ['id', 'username', 'first_name', 'last_name', 'email', 'password'],
-	  include: [
-		{
-		  model: User,
-		  attributes: ['id', 'username', 'first_name', 'last_name', 'email', 'password'],
-		},
-	  ],
-	})
-	  .then((userData) => res.json(userData))
-	  .catch((err) => {
-		console.log(err);
-		res.status(500).json(err);
-	  });
-  });
+// ONLY KEEP IF ADDING ADMIN ROLE, OTHWERWISE POSES SECURITY ISSUE
+// router.get("/", (req, res) => {
+// 	User.findAll({
+// 	  attributes: ['id', 'username', 'first_name', 'last_name', 'email', 'password'],
+// 	  include: [
+// 		{
+// 		  model: User,
+// 		  attributes: ['id', 'username', 'first_name', 'last_name', 'email', 'password'],
+// 		},
+// 	  ],
+// 	})
+// 	  .then((userData) => res.json(userData))
+// 	  .catch((err) => {
+// 		console.log(err);
+// 		res.status(500).json(err);
+// 	  });
+//   });
 
-// Login
+// LOGIN--keep in api 
 router.post("/login", async (req, res) => {
 	try {
 		const dbUserData = await User.findOne({
@@ -64,9 +65,10 @@ router.post("/login", async (req, res) => {
 				.json({ message: "Incorrect email or password. Please re-enter!" });
 			return;
 		}
-
+// saving session data ---on client side, cookie is saved. If the two match, then user IS logged in
 		req.session.save(() => {
 			req.session.loggedIn = true;
+			req.session.user_id = dbUserData.id;
 
 			res
 				.status(200)
@@ -79,6 +81,7 @@ router.post("/login", async (req, res) => {
 });
 
 // Logout
+// deleting session data ---on client side, cookie saved becomes useless. User must log in again 
 router.post("/logout", (req, res) => {
 	if (req.session.loggedIn) {
 		req.session.destroy(() => {
