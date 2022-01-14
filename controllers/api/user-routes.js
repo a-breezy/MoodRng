@@ -21,6 +21,23 @@ router.post("/", async (req, res) => {
 	}
 });
 
+router.get("/", (req, res) => {
+	User.findAll({
+	  attributes: ['id', 'username', 'first_name', 'last_name', 'email', 'password'],
+	  include: [
+		{
+		  model: User,
+		  attributes: ['id', 'username', 'first_name', 'last_name', 'email', 'password'],
+		},
+	  ],
+	})
+	  .then((userData) => res.json(userData))
+	  .catch((err) => {
+		console.log(err);
+		res.status(500).json(err);
+	  });
+  });
+
 // Login
 router.post("/login", async (req, res) => {
 	try {
