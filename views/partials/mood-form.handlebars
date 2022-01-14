@@ -1,48 +1,41 @@
 
 
 <form action="/entry" method="post" class="form-example">
+
   <div class="form-example">
-    <label for="mood_id">Enter your name: </label>
-    <input type="number" value="1" name="mood_id" id="name" required>
-  </div>
-  <div class="form-example">
-    <label for="username">Enter your name: </label>
+    <label for="username">Username: </label>
     <input type="text" name="username" id="name" required>
   </div>
-  {{!-- <select name="pets" id="pet-select">
-    <option value="">--Please choose an option--</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="hamster">Hamster</option>
-    <option value="parrot">Parrot</option>
-    <option value="spider">Spider</option>
-    <option value="goldfish">Goldfish</option>
-</select> --}}
-  <div class="form-example">
-    <label for="sleep">Sleep:</label>
-    <input type="number" value="2" name="sleep" id="email" required>
-  </div>
-  <div class="form-example">
-    <label for="food">Food:</label>
-    <input type="text" name="food" id="email" required>
-  </div>
-   <div class="form-example">
-    <label for="activities">Activities:</label>
-    <input type="text" name="activities" id="activities" required>
-  </div>
+
    <div class="form-example">
     <label for="mood">Mood:</label>
     <select id="mood-select">
     <option value="">--Please choose an option--</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="hamster">Hamster</option>
-    <option value="parrot">Parrot</option>
-    <option value="spider">Spider</option>
-    <option value="goldfish">Goldfish</option>
+    <option value="1">Ecstatic &#128513; </option>
+    <option value="2">Confident &#128526; </option>
+    <option value="3">Happy &#128512; </option>
+    <option value="4">Frustrated &#128534; </option>
+    <option value="5">Sad &#128532; </option>
+    <option value="6">Angry &#128545; </option>
+    </select>
   </div>
-  </div>
+
   <div class="form-example">
-    <input type="submit" value="Subscribe!">
+    <label for="food">Food:</label>
+    <input type="text" name="food" id="food" required>
+  </div>
+
+   <div class="form-example">
+    <label for="activities">Activities:</label>
+    <input type="text" name="activities" id="activities" required>
+  </div>
+
+  <div class="form-example">
+    <label for="sleep">Sleep:</label>
+    <input type="number" value="8" name="sleep" id="sleep" required>
+  </div>
+  <br>
+  <div class="form-example">
+    <input type="submit" value="Submit!">
   </div>
 </form>

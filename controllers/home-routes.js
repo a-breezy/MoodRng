@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const sequelize = require("../config/connection");
 const { Mood, Entry, User } = require("../models");
 // Import the custom middleware ---> WHAT DOES THIS DO? ---> This creates a promise that must be resolved in order for app to progress
 const withAuth = require("../utils/auth");
@@ -77,12 +78,13 @@ router.post("/entry", async (req, res) => {
 			res.status(200).render("success");
 			
 		});
-
+		
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
 	}
 });
+
 
 // GET one painting
 // // Use the custom middleware before allowing the user to access the painting
