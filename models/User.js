@@ -23,16 +23,16 @@ User.init(
 		first_name: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			validate: {
-				isFirstName: true,
-			},
+			// validate: {
+			// 	isFirstName: true,
+			// },
 		},
 		last_name: {
 			type: DataTypes.STRING,
 			allowNull: false,
-			validate: {
-				isLastName: true,
-			},
+			// validate: {
+			// 	isLastName: true,
+			// },
 		},
 		email: {
 			type: DataTypes.STRING,
@@ -46,7 +46,7 @@ User.init(
 			type: DataTypes.STRING,
 			allowNull: false,
 			validate: {
-				len: [15],
+				len: [6],
 			},
 		},
 	},
