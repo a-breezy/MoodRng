@@ -5,18 +5,10 @@ const withAuth = require("../utils/auth");
 
 // GET ALL ENTRIES FOR AN INDIVDUAL USER
 router.get("/", async (req, res) => {
+	console.log("Here I am")
 	try {
 		// NEED TO CHANGE THIS TO THE NAME OF THE DATABASE FOR THE VARIABLE NAME, AND AWAIT ON ENTRY.FINDALL...THIS WILL BE USED TO POPULATE GRAPH
-		const dbMoodData = await Entry.findAll({
-			include: [
-				// WILL NEED TO CHANGE THE MODEL TO ENTRY
-				{
-					model: Entry,
-					// FOR WHEN A USER HOVERS OVER AN ENTRY DATA POINT, BUT DOESNT CLICK
-					attributes: ["mood", "food", "sleep", "activities", "description"],
-				},
-			],
-		});
+		const dbMoodData = await Entry.findAll();
 		// THESE SHOULD ALL BE CHANGED TO ENTRY, THE DB TO THE DATABASE VARIABLE NAMED ABOVE
 		const entries = dbMoodData.map((gallery) =>
 			// WHAT DOES PLAIN: TRUE DO?
@@ -24,7 +16,7 @@ router.get("/", async (req, res) => {
 		);
 
 		// WE need to create user_page in handlebars for user to login and see this stuff
-		res.render("user_page", {
+		res.render("homepage", {
 			entries,
 			loggedIn: req.session.loggedIn,
 		});
@@ -48,12 +40,11 @@ router.get("/entry/:id", withAuth, async (req, res) => {
 					model: Entry,
 					attributes: [
 						"id",
-						"mood",
+						"username",
+						"mood_id",
 						"sleep",
 						"food",
 						"activities",
-						"description",
-						"created_at",
 					],
 				},
 			],
@@ -70,21 +61,21 @@ router.get("/entry/:id", withAuth, async (req, res) => {
 
 // CREATE NEW ENTRY
 router.post("/entry", async (req, res) => {
+	console.log(req.body);
 	try {
 		// NEED TO CHANGE THIS TO THE NAME OF THE DATABASE FOR THE VARIABLE NAME
 		const dbMoodData = await Entry.create({
 			username: req.body.username,
-			mood: req.body.mood,
+			mood_id: req.body.mood_id,
 			sleep: req.body.sleep,
 			food: req.body.food,
 			activities: req.body.activities,
-			description: req.body.description,
 		});
 
 		req.session.save(() => {
 			req.session.loggedIn = true;
 
-			res.status(200).json(dbUserData);
+			res.status(200).json(dbMoodData);
 		});
 	} catch (err) {
 		console.log(err);
