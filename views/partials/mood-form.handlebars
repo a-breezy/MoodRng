@@ -1,32 +1,42 @@
+<form action="/entry" method="post" class="form-example">
 
+  <div class="form-example">
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="name" required>
+  </div>
 
-<form action="/entry" method="post" class="entry">
-  <div class="form-example">
-    <label for="sleep">Sleep:</label>
-    <input type="number" value="2" name="sleep" id="sleep" required>
-  </div>
-  <div class="form-example">
-    <label for="food">Food:</label>
-    <input type="text" name="food" id="email" required>
-  </div>
-   <div class="form-example">
-    <label for="activities">Activities:</label>
-    <input type="text" name="activities" id="activities" required>
-  </div>
    <div class="form-example">
     <label for="mood">Mood:</label>
     <select id="mood-select">
     <option value="">--Please choose an option--</option>
-    <option value="1">Happy</option>
-    <option value="2">Sad</option>
-    <option value="3">Hamster</option>
-    <option value="4">Parrot</option>
-    <option value="5">Spider</option>
-    <option value="6">Goldfish</option>
+    <option value="1">Ecstatic &#128513; </option>
+    <option value="2">Confident &#128526; </option>
+    <option value="3">Happy &#128512; </option>
+    <option value="4">Frustrated &#128534; </option>
+    <option value="5">Sad &#128532; </option>
+    <option value="6">Angry &#128545; </option>
     </select>
+
   </div>
+
   <div class="form-example">
-    <input type="submit" value="Subscribe!">
+    <label for="food">Food:</label>
+    <input type="text" name="food" id="food" required>
+  </div>
+
+   <div class="form-example">
+    <label for="activities">Activities:</label>
+    <input type="text" name="activities" id="activities" required>
+  </div>
+
+  <div class="form-example">
+    <label for="sleep">Sleep:</label>
+    <input type="number" value="8" name="sleep" id="sleep" required>
+
+  </div>
+  <br>
+  <div class="form-example">
+    <input type="submit" value="Submit!">
   </div>
 </form>
 

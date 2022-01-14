@@ -1,5 +1,7 @@
 const router = require("express").Router();
+const sequelize = require("../config/connection");
 const { Entry, User } = require("../models");
+
 // Import the custom middleware ---> WHAT DOES THIS DO? ---> This creates a promise that must be resolved in order for app to progress
 const withAuth = require("../utils/auth");
 
@@ -25,7 +27,6 @@ router.get("/", async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-
 
 router.get("/login", (req, res) => {
 	if (req.session.loggedIn) {
