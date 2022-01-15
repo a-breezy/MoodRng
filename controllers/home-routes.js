@@ -29,6 +29,8 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/login", (req, res) => {
+	console.log(req.session.loggedIn, " ", req.session.userId);
+	console.log(req.session);
 	if (req.session.loggedIn) {
 		res.redirect("/");
 		return;

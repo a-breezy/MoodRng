@@ -46,8 +46,8 @@ router.post("/login", async (req, res) => {
 	try {
 		const dbUserData = await User.findOne({
 			where: {
-				email: req.body.email,
-			},
+				email: req.body.email
+			}
 		});
 
 		if (!dbUserData) {
@@ -66,10 +66,11 @@ router.post("/login", async (req, res) => {
 			return;
 		}
 // saving session data ---on client side, cookie is saved. If the two match, then user IS logged in
-		req.session.save(() => {
+		req.session.save(() => { 
 			req.session.loggedIn = true;
-			req.session.user_id = dbUserData.id;
-
+			req.session.userId = dbUserData.dataValues.id;
+			console.log("IN REQ SAVE");
+			console.log("user data:", dbUserData.dataValues.id );
 			res
 				.status(200)
 				.json({ user: dbUserData, message: "You are now logged in!" });
