@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
+// const sequelize = require("../config/connection");
 const { Entry, User } = require("../models");
 
 // Import the custom middleware ---> WHAT DOES THIS DO? ---> This creates a promise that must be resolved in order for app to progress
@@ -53,7 +53,7 @@ router.get("/entry/:id", withAuth, async (req, res) => {
 			attributes: [
 			  "id",
 			  "username",
-			  "mood_id",
+			  "mood",
 			  "sleep",
 			  "food",
 			  "activities",

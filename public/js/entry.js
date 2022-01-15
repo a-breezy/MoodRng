@@ -2,13 +2,15 @@ const entryFormHandler = async (event) => {
     event.preventDefault();
   
     const sleep = document.querySelector('#sleep').value.trim();
-    const mood = document.querySelector('#').value.trim();
+    const mood = document.querySelector('#mood').value.trim();
+    const food = document.querySelector('#food').value.trim();
+    const activities = document.querySelector('#activities').value.trim();
 
   
     if (email && password) {
       const response = await fetch('/api/entries/', {
         method: 'POST',
-        body: JSON.stringify({ sleep,  }),
+        body: JSON.stringify({ mood, sleep, food, activities }),
         headers: { 'Content-Type': 'application/json' },
       });
   
