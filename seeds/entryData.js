@@ -4,7 +4,7 @@ const entryData = [
 	{
 		id: 1,
 		username: "USER1",
-		mood_id: 2,
+		mood: 2,
 		sleep: 8,
 		food: "Pizza",
 		activities: "Run",

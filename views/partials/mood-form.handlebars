@@ -1,9 +1,5 @@
 <form action="/entry" method="post" class="form-example">
 
-  <div class="form-example">
-    <label for="username">Username: </label>
-    <input type="text" name="username" id="name" required>
-  </div>
 
    <div class="form-example">
     <label for="mood">Mood:</label>
@@ -19,6 +15,11 @@
 
   </div>
 
+ <div class="form-example">
+    <label for="sleep">Sleep:</label>
+    <input type="number" value="8" name="sleep" id="sleep" required>
+  </div>
+
   <div class="form-example">
     <label for="food">Food:</label>
     <input type="text" name="food" id="food" required>
@@ -29,11 +30,7 @@
     <input type="text" name="activities" id="activities" required>
   </div>
 
-  <div class="form-example">
-    <label for="sleep">Sleep:</label>
-    <input type="number" value="8" name="sleep" id="sleep" required>
-
-  </div>
+ 
   <br>
   <div class="form-example">
     <input type="submit" value="Submit!">
