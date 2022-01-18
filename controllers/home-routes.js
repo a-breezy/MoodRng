@@ -7,9 +7,11 @@ const withAuth = require("../utils/auth");
 
 // route to render homepage
 router.get("/", async (req, res) => {
+
 	console.log("RENDER HOMEPAGE")
 	try {	
 		res.render("homepage", {
+
 			loggedIn: req.session.loggedIn,
 		});
 	} catch (err) {
@@ -26,7 +28,20 @@ router.get("/login", (req, res) => {
 		return;
 	}
 
-	res.render("login");
+// 	res.render("login");
+// });
+
+//Route to get to ENTRY section on homepage
+router.get("/entry", (req, res) => {
+	console.log(req.session.loggedIn, " ", req.session.userId);
+	console.log(req.session);
+	if (req.session.loggedIn) {
+		res.redirect("/entry");
+		return;
+	}
+
+	res.render("homepage");
 });
+
 
 module.exports = router;
