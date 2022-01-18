@@ -1,12 +1,12 @@
 
-function changeTxt() {
+const changeTxt = () => {
   document.getElementById('btn').innerHTML = 'LOGGING IN...';
 }
 
 const loginFormHandler = async (event) => {
-  
   event.preventDefault();
   changeTxt();
+  
 
 
   const email = document.querySelector('#email-login').value.trim();
@@ -30,5 +30,5 @@ const loginFormHandler = async (event) => {
 
 document
   .getElementById('btn')
-  .addEventListener('submit', loginFormHandler);
+  .addEventListener('submit', loginFormHandler,);
   
