@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 		// );
 
 		// WE need to create user_page in handlebars for user to login and see this stuff
-		res.render("homepage", {
+		res.render("login", {
 			dbMoodData,
 			loggedIn: req.session.loggedIn,
 		});
