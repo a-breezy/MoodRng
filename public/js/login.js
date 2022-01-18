@@ -1,3 +1,4 @@
+console.log("hello! im running!")
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
@@ -42,6 +43,10 @@ const signupFormHandler = async (event) => {
     }
   }
 };
+
+function changeTxt() {
+    document.getElementById('btn').innerHTML = 'LOGGING IN...';
+}
 
 document
   .querySelector('.login-form')

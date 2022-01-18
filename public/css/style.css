@@ -115,7 +115,7 @@ img {
   color: var(--dark);
 }
 
-.login-card {
+/* .login-card {
   margin: 0 0 20px 0;
   flex: 0 0 50%;
   max-width: 50%;
@@ -126,7 +126,7 @@ img {
   border-width: thick;
   background-color: #577a7c;
   color: var(--light);
-}
+} */
 
 .card header {
   color: var(--light);
