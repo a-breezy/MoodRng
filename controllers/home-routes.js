@@ -36,10 +36,21 @@ router.get("/login", (req, res) => {
 		return;
 	}
 
-	res.render("login");
+// 	res.render("login");
+// });
+
+//Route to get to ENTRY section on homepage
+router.get("/entry", (req, res) => {
+	console.log(req.session.loggedIn, " ", req.session.userId);
+	console.log(req.session);
+	if (req.session.loggedIn) {
+		res.redirect("/entry");
+		return;
+	}
+
+	res.render("homepage");
 });
 
-// ***SHOULD BE MOVED TO API ROUTES BC OF THE RENDER
 // GET ONE ENTRY
 // Use the custom middleware before allowing the user to access the INDIVIDUAL ENTRIES
 // WHEN A USER CLICKS ON THE POINT ON THE PLOT, IT BRINGS UP /ENTRY/:ID

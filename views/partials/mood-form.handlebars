@@ -1,40 +1,63 @@
 <form class="form-example" id="entry">
 
+  
 
-   <div class="form-example">
-    <label for="mood">Mood:</label>
-    <select id="mood">
-    <option value="">--Please choose an option--</option>
-    <option value="1">Ecstatic &#128513; </option>
-    <option value="2">Confident &#128526; </option>
-    <option value="3">Happy &#128512; </option>
-    <option value="4">Frustrated &#128534; </option>
-    <option value="5">Sad &#128532; </option>
-    <option value="6">Angry &#128545; </option>
-    </select>
 
+<div class="bg">
+  <div class="bgLogo">
+    <div class="border">
+      <select class="form-select" id="select-form" aria-label="Default select example">
+        <option value="1">Ecstatic &#128513; </option>
+        <option value="2">Confident &#128526; </option>
+        <option value="3">Happy &#128512; </option>
+        <option value="4">Frustrated &#128534; </option>
+        <option value="5">Sad &#128532; </option>
+        <option value="6">Angry &#128545; </option>
+      </select>
+        <label for="exampleInputEmail1"></label>
+        <input
+          id="sleep-form"
+          type="number"
+          min="0"
+          class="forms"
+          placeholder="Sleep (in hours)"
+        />
+        <label for="exampleInputPassword1"></label>
+        <input
+          id="food-form"
+          class="forms"
+          placeholder="Food"
+        />
+        <label for="exampleInputEmail1"></label>
+        <input
+          id="activities-form"
+          class="forms"
+          placeholder="Activities"
+        />
+      <button
+        onclick="changeTxt()"
+        type="submit"
+        id="btn"
+        class="btn btn-outline-success">
+        SUBMIT
+      </button>
+    </div>
   </div>
+</div>
 
- <div class="form-example">
+<script src="../../js/login.js"></script>
+
+{{!-- <div class="form-example">
     <label for="sleep">Sleep:</label>
-    <input type="number" value="8" name="sleep" id="sleep" required>
+    <input type="number" value="8" name="sleep" id="sleep" required />
   </div>
 
   <div class="form-example">
     <label for="food">Food:</label>
-    <input type="text" name="food" id="food" required>
+    <input type="text" name="food" id="food" required />
   </div>
 
-   <div class="form-example">
-    <label for="activities">Activities:</label>
-    <input type="text" name="activities" id="activities" required>
-  </div>
-
- 
-  <br>
   <div class="form-example">
-    <input type="submit" value="Submit!">
-  </div>
-</form>
-
-<script src="./js/entry.js"></script>
+    <label for="activities">Activities:</label>
+    <input type="text" name="activities" id="activities" required />
+  </div> --}}

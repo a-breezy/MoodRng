@@ -88,4 +88,12 @@
   #create{
       margin: 0px;
   }
+
+  #select-form{
+    width: 40vw;
+    border-radius: 5px;
+    opacity: 1;
+    border-color: whitesmoke;
+    border: black;
+  }
   

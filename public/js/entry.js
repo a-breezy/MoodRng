@@ -7,7 +7,6 @@ const entryFormHandler = async (event) => {
     const activities = document.querySelector('#activities').value.trim();
   
     if (sleep && mood && food && activities) {
-      console.log("IN SIDE EMAIl/PASSWORD");
       const response = await fetch('/api/entries/', {
         method: 'POST',
         body: JSON.stringify({ mood, sleep, food, activities }),
