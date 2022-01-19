@@ -6,7 +6,7 @@
 <div class="bg">
   <div class="bgLogo">
     <div class="border">
-      <select class="form-select" id="select-form" aria-label="Default select example">
+      <select class="form-select" id="mood-form" aria-label="Default select example">
         <option value="1">Ecstatic &#128513; </option>
         <option value="2">Confident &#128526; </option>
         <option value="3">Happy &#128512; </option>
@@ -35,9 +35,9 @@
           placeholder="Activities"
         />
       <button
-        onclick="changeTxt()"
+        {{!-- onclick="changeTxt()" --}}
         type="submit"
-        id="btn"
+        id="btn entry-button"
         class="btn btn-outline-success">
         SUBMIT
       </button>

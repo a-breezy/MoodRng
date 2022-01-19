@@ -1,10 +1,11 @@
+
 const entryFormHandler = async (event) => {
     event.preventDefault();
-  
-    const sleep = document.querySelector('#sleep').value;
-    const mood = document.querySelector('#mood').value;
-    const food = document.querySelector('#food').value.trim();
-    const activities = document.querySelector('#activities').value.trim();
+    
+    const sleep = document.querySelector('#sleep-form').value;
+    const mood = document.querySelector('#mood-form').value;
+    const food = document.querySelector('#food-form').value.trim();
+    const activities = document.querySelector('#activities-form').value.trim();
   
     if (sleep && mood && food && activities) {
       const response = await fetch('/api/entries/', {
