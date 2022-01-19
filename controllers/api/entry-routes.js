@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 // CREATE NEW ENTRY
-router.post("/users", async (req, res) => {
+router.post("/", async (req, res) => {
 	console.log("BODY", req.body);
 	try {
 		// NEED TO CHANGE THIS TO THE NAME OF THE DATABASE FOR THE VARIABLE NAME

@@ -13,12 +13,14 @@ const entryFormHandler = async (event) => {
         body: JSON.stringify({ mood, sleep, food, activities }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
       if (response.ok) {
+        
         alert("Entry successfully Created");
         document.location.replace('/');
+        // call message function
+        // messageGenerator();
       } else {
-        alert('Failed to log in.');
+        alert('Failed to record entry');
       }
     }
   };
