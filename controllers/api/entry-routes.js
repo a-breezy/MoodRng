@@ -27,6 +27,9 @@ router.post("/", async (req, res) => {
 // GET ENTRIES
 router.get("/", (req, res) => {
 	const entryData = Entry.findAll({
+		where: {
+			user_id : req.session.userId
+		},
 	  attributes: [
       "id",
       "mood",
