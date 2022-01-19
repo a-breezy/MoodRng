@@ -1,4 +1,4 @@
-var mockData = [
+var data = [
 	{
 		moodId: 2,
 		sleep: "good",
@@ -50,12 +50,11 @@ var mockData = [
 	},
 ];
 
-const data = d3.json(
-	"http://localhost:3001/api/entries",
-	function (error, data) {
-		data = JSON.parse(data);
-	}
-);
+// d3.json("http://localhost:3001/api/entries", function (d) {
+// 	console.log(d);
+// });
+
+// console.log(data);
 // fetch to call api data
 //// currently not working
 // fetch("/api/entries/graph")

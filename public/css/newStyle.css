@@ -29,6 +29,7 @@
       width: 50vw;
       min-width: 40vw;
       margin-top: 60px;
+      z-index: 2;
   }
   
   .bg {
@@ -39,7 +40,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-shrink: inherit;
-    
+
   }
   
   #login-button:hover {
@@ -126,5 +127,31 @@
     border-color: whitesmoke;
     border: black;
     align-items: center;
+  }
+
+  .logout_div{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #logout:hover {
+    background-color: red;
+    color: whitesmoke;
+  }
+  
+  #logout:focus {
+    background-color: rgb(14, 126, 14);
+    color: whitesmoke;
+    box-shadow: whitesmoke;
+  }
+  
+  #logout {
+    background-color:whitesmoke;
+    border-color: rgb(14, 126, 14);
+    opacity: 0.9;
+    width: 40vw;
+    height: 40px;
+    border-radius: 20px;
   }
   

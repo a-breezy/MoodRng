@@ -41,7 +41,7 @@ router.post("/", async (req, res) => {
 // 	  });
 //   });
 
-// LOGIN--keep in api 
+// LOGIN--keep in api -- WORKING!!
 router.post("/login", async (req, res) => {
 	
 	try {
@@ -87,7 +87,7 @@ router.post("/login", async (req, res) => {
 	}
 });
 
-// Logout
+// Logout -- WORKING!!
 // deleting session data ---on client side, cookie saved becomes useless. User must log in again 
 router.post("/logout", (req, res) => {
 	if (req.session.loggedIn) {
