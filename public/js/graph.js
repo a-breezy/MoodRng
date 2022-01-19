@@ -56,6 +56,8 @@ const data = d3.json(
 		data = JSON.parse(data);
 	}
 );
+
+console.log(data);
 // fetch to call api data
 //// currently not working
 // fetch("/api/entries/graph")
