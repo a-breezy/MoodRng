@@ -47,4 +47,9 @@ router.get("/entry", (req, res) => {
 });
 
 
+router.get("/graph", function (req, res) {
+	console.log("in graph route");
+	res.render("graph");
+});
+
 module.exports = router;
