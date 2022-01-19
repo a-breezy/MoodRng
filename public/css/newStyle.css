@@ -2,6 +2,7 @@
     box-sizing: content-box;
   } */
 
+  /* overflow makes user unable to scroll */
   * {
     margin: 0px;
     overflow: hidden;
@@ -36,7 +37,10 @@
     background-position: center;
     height: 100vh;
     width: 100vw;
-    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: inherit;
+
   }
   
   #login-button:hover {
@@ -92,7 +96,7 @@
   
   #log {
     font-family: "Mulish", sans-serif;
-    font-weight: lighter;
+    text-align: center;
     font-size: 25px;
     font-weight: lighter;
   }
@@ -103,6 +107,10 @@
     opacity: 1;
     border-color: whitesmoke;
   }
+
+  /* #login-form {
+    align-items: center;
+  } */
   
   ::-webkit-input-placeholder {
     text-align: center;
@@ -118,6 +126,7 @@
     opacity: 1;
     border-color: whitesmoke;
     border: black;
+    align-items: center;
   }
 
   .logout_div{
