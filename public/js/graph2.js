@@ -107,8 +107,11 @@ const max = d3.max(data, function (d) {
 });
 
 // Add Y axis
-const y = d3.scaleLinear().domain([0, max]).range([height, 0]);
-svg.append("g").call(d3.axisLeft(y));
+const y = d3.scaleLinear().domain([0, 7]).range([height, 0]);
+// way to change y axis labels
+// .scaleBand()
+// 	.domain(["mad", "energetic", "happy", "grumpy", "tired", "hungry"])
+svg.append("g").call(d3.axisLeft(y).tickValues([0, 1, 2, 3, 4, 5, 6]));
 
 // Set the gradient
 svg
@@ -121,12 +124,12 @@ svg
 	.attr("y2", y(max))
 	.selectAll("stop")
 	.data([
-		{ offset: "0%", color: "blue" },
-		{ offset: "15%", color: "green" },
-		{ offset: "30%", color: "yellow" },
-		{ offset: "45%", color: "orange" },
-		{ offset: "60%", color: "red" },
-		{ offset: "75%", color: "purple" },
+		{ offset: "20%", color: "blue" },
+		{ offset: "35%", color: "green" },
+		{ offset: "50%", color: "yellow" },
+		{ offset: "75%", color: "orange" },
+		{ offset: "80%", color: "red" },
+		{ offset: "100%", color: "purple" },
 	])
 	.enter()
 	.append("stop")
@@ -137,29 +140,19 @@ svg
 		return d.color;
 	});
 
-const line = d3
-	.line()
-	.curve(d3.curveStep)
-	.x((d) => x(d.created_at))
-	.y((d) => y(d.moodId));
 // Add the line
 svg
 	.append("path")
 	.datum(data)
-	.attr("fill", "none")
+	.attr("fill", "none") // replace 'none' with 'url(#line-gradient)
 	.attr("stroke", "url(#line-gradient)")
 	.attr("stroke-width", 2)
 	.attr(
 		"d",
-		line
-		// d3
-		// 	.line()
-		// 	// .x((d) => d.created_at)
-		// 	// .y((d) => d.moodId)
-		// 	.x(function (d) {
-		// 		return x(d.created_at);
-		// 	})
-		// 	.y(function (d) {
-		// 		return y(d.moodId);
-		// 	})
+		// line
+		d3
+			.line()
+			.curve(d3.curveStep)
+			.x((d) => x(d.created_at))
+			.y((d) => y(d.moodId))
 	);
