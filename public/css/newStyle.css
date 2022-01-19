@@ -119,4 +119,30 @@
     border-color: whitesmoke;
     border: black;
   }
+
+  .logout_div{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #logout:hover {
+    background-color: red;
+    color: whitesmoke;
+  }
+  
+  #logout:focus {
+    background-color: rgb(14, 126, 14);
+    color: whitesmoke;
+    box-shadow: whitesmoke;
+  }
+  
+  #logout {
+    background-color:whitesmoke;
+    border-color: rgb(14, 126, 14);
+    opacity: 0.9;
+    width: 40vw;
+    height: 40px;
+    border-radius: 20px;
+  }
   
