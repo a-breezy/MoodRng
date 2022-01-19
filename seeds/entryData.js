@@ -3,7 +3,7 @@ const { Entry } = require("../models");
 const entryData = [
 	{
 		id: 1,
-		username: "USER1",
+		user_id: 1,
 		mood: 2,
 		sleep: 8,
 		food: "Pizza",
