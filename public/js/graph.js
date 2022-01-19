@@ -1,4 +1,4 @@
-var data = [
+var mockData = [
 	{
 		moodId: 2,
 		sleep: "good",
@@ -50,7 +50,12 @@ var data = [
 	},
 ];
 
-//Read the data
+const data = d3.json(
+	"http://localhost:3001/api/entries",
+	function (error, data) {
+		data = JSON.parse(data);
+	}
+);
 // fetch to call api data
 //// currently not working
 // fetch("/api/entries/graph")
@@ -74,8 +79,6 @@ const margin = { top: 10, right: 30, bottom: 30, left: 60 },
 // append the svg object to the body of the page
 const svg = d3
 	.select("svg")
-	// create an svg element if none available
-	// .append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
 	.append("g")

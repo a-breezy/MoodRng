@@ -37,7 +37,8 @@ router.get("/graph", async (req, res) => {
 	}
 });
 
-// GET ENTRIES
+// GET ENTRIES 
+//// for use with graph 
 router.get("/", (req, res) => {
 	const entryData = Entry.findAll({
 		where: {

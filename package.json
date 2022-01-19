@@ -7,8 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
     "seed": "node seeds/index.js",
-    "heroku-postinstall": "npm run seed"
-    
+    "heroku-postinstall": "npm run seed"    
   },
   "author": "",
   "license": "ISC",
