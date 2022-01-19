@@ -8,28 +8,29 @@ const withAuth = require("../utils/auth");
 // route to render homepage
 router.get("/", async (req, res) => {
 
-	console.log("RENDER HOMEPAGE")
-	try {	
-		res.render("homepage", {
-
-			loggedIn: req.session.loggedIn,
-		});
+	// console.log("RENDER HOMEPAGE")
+	try {
+		if (req.session) {
+			res.render("homepage")
+		} else {
+			res.render("login");
+		}
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
 	}
 });
 
-router.get("/login", (req, res) => {
-	console.log(req.session.loggedIn, " ", req.session.userId);
-	console.log(req.session);
-	if (req.session.loggedIn) {
-		res.redirect("/");
-		return;
-	}
-});
-// 	res.render("login");
+// router.get("/", async (req, res) => {
+// 	console.log(req.session.loggedIn, " ", req.session.userId);
+// 	console.log(req.session);
+// 	if (req.session.loggedIn) {
+// 		res.render("login");
+// 		return;
+// 	}
 // });
+// // 	res.render("login");
+// // });
 
 //Route to get to ENTRY section on homepage
 router.get("/entry", (req, res) => {

@@ -43,13 +43,16 @@ router.post("/", async (req, res) => {
 
 // LOGIN--keep in api 
 router.post("/login", async (req, res) => {
+	
 	try {
 		const dbUserData = await User.findOne({
+			
 			where: {
 				email: req.body.email
 			}
+			
 		});
-
+		console.log("DB USER DATA", dbUserData)
 		if (!dbUserData) {
 			res
 				.status(400)
@@ -67,12 +70,15 @@ router.post("/login", async (req, res) => {
 		}
 // saving session data ---on client side, cookie is saved. If the two match, then user IS logged in
 		req.session.save(() => { 
+			
 			req.session.loggedIn = true;
 			req.session.userId = dbUserData.dataValues.id;
-			console.log("IN REQ SAVE");
-			console.log("user data:", dbUserData.dataValues.id );
+			
+			// console.log("IN REQ SAVE");
+			// console.log("user data:", dbUserData.dataValues.id );
 			res
 				.status(200)
+				// console.log("LOGIN ROUTE TEST")
 				.json({ user: dbUserData, message: "You are now logged in!" });
 		});
 	} catch (err) {

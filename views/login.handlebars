@@ -8,7 +8,7 @@
     />
     <div class="border">
       <p id="log">Log your mood and find your groove!</p>
-      {{!-- <form class="form login-form"> --}}
+      <form id="login-form">
         <label for="exampleInputEmail1"></label>
         <input
           id="email-login"
@@ -24,14 +24,13 @@
           placeholder="Password"
         />
         <button
-          onclick="changeTxt()"
           type="submit"
-          id="btn"
+          id="login-button"
           class="btn btn-outline-success"
         >
           SUBMIT
         </button>
-      {{!-- </form> --}}
+      </form>
       <p id="create">
         Don't have an account? Create one
         <a href="./homepage.handlebars"> here </a>
