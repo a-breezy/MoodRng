@@ -137,23 +137,29 @@ svg
 		return d.color;
 	});
 
+const line = d3
+	.line()
+	.curve(d3.curveStep)
+	.x((d) => x(d.created_at))
+	.y((d) => y(d.moodId));
 // Add the line
 svg
 	.append("path")
-	.data(data)
+	.datum(data)
 	.attr("fill", "none")
 	.attr("stroke", "url(#line-gradient)")
 	.attr("stroke-width", 2)
 	.attr(
 		"d",
-		d3
-			.line()
-			.x((d) => d.created_at)
-			.y((d) => d.moodId)
-		// .x(function (d) {
-		// 	return x(d.created_at);
-		// })
-		// .y(function (d) {
-		// 	return y(d.moodId);
-		// })
+		line
+		// d3
+		// 	.line()
+		// 	// .x((d) => d.created_at)
+		// 	// .y((d) => d.moodId)
+		// 	.x(function (d) {
+		// 		return x(d.created_at);
+		// 	})
+		// 	.y(function (d) {
+		// 		return y(d.moodId);
+		// 	})
 	);
