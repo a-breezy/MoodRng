@@ -59,6 +59,28 @@
     border-radius: 20px;
   
   }
+
+  #signup-button:hover {
+    background-color: rgb(14, 126, 14);
+    color: whitesmoke;
+  }
+  
+  #signup-button:focus {
+    background-color: rgb(14, 126, 14);
+    color: whitesmoke;
+    box-shadow: whitesmoke;
+  }
+  
+  #signup-button {
+    margin-top: 10px;
+    background-color:whitesmoke;
+    border-color: rgb(14, 126, 14);
+    opacity: 0.9;
+    width: 40vw;
+    height: 40px;
+    border-radius: 20px;
+  
+  }
   
   #logo {
     max-width: 720px;

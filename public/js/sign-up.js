@@ -1,5 +1,11 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
+
+    const changeTxt = () => {
+      document.getElementById('signup-button').innerHTML = 'LOADING...';
+    }
+
+    changeTxt();
   
     const username = document.querySelector('#username-signup').value.trim();
     const first_name = document.querySelector('#first_name-signup').value.trim();
