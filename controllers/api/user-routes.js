@@ -79,7 +79,7 @@ router.post("/login", async (req, res) => {
 			res
 				.status(200)
 				// console.log("LOGIN ROUTE TEST")
-				.json({ user: dbUserData, message: "You are now logged in!" });
+				.redirect("/")
 		});
 	} catch (err) {
 		console.log(err);

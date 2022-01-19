@@ -27,23 +27,30 @@
       <h1>Welcome to the MoodRng</h1>
     </header>
     <nav>
-      <a href="/">Home</a>
-      {{#if loggedIn}}
+      <a href="/">Home</a> --}}
+      {{!-- {{#if loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
+        <script src="/js/logout.js"></script>
+        {{/if}} --}}
+      {{!--{{else}}
         <a href="/login">Login</a>
-      {{/if}}
-    </nav> --}}
-    <main>
+        
+      
+    </nav> 
+    <main> --}}
       {{!-- <aside>
       </aside> --}}
       <div>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        <script src="/js/logout.js"></script>
+        {{/if}}
         {{{body}}}
       </div>
     </main>
     {{!-- {{#if loggedIn}}
-      <script src="/js/logout.js"></script>
-    {{/if}} --}}
+      
+    {{!-- {{/if}}  --}}
      <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

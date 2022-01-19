@@ -7,11 +7,13 @@ const withAuth = require("../utils/auth");
 
 // route to render homepage
 router.get("/", async (req, res) => {
-
+	console.log(req.session)
 	// console.log("RENDER HOMEPAGE")
 	try {
-		if (req.session) {
-			res.render("homepage")
+		if (req.session.loggedIn) {
+			res.render("homepage", {
+				loggedIn: req.session.loggedIn
+			})
 		} else {
 			res.render("login");
 		}
