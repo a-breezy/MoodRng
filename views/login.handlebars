@@ -1,3 +1,48 @@
+<div class="bg">
+  <div class="bgLogo">
+    <img
+      id="logo"
+      src="../../images/logo1.png"
+      href=""
+      alt="logo"
+    />
+    <div class="border">
+      <p id="log">Log your mood and find your groove!</p>
+      <form id="login-form">
+        <label for="exampleInputEmail1"></label>
+        <input
+          id="email-login"
+          type="email"
+          class="forms"
+          placeholder="Email"
+        />
+        <label for="exampleInputPassword1"></label>
+        <input
+          id="password-login"
+          type="password"
+          class="forms"
+          placeholder="Password"
+        />
+        <button
+          type="submit"
+          id="login-button"
+          class="btn btn-outline-success"
+        >
+          SUBMIT
+        </button>
+      </form>
+      <p id="create">
+        Don't have an account? Create one
+        <a href="./homepage.handlebars"> here </a>
+        and get started!
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="../../js/login.js"></script>
+
+{{! 
 <div class="row justify-space-between-md">
   <div class="login-card">
     <h2 class="page-title">Login</h2>
@@ -43,6 +88,4 @@
       </div>
     </form>
   </div>
-</div>
-
-<script src="./js/login.js"></script>
+</div> }}

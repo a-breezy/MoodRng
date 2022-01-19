@@ -5,39 +5,47 @@ const { Entry, User } = require("../models");
 // Import the custom middleware ---> WHAT DOES THIS DO? ---> This creates a promise that must be resolved in order for app to progress
 const withAuth = require("../utils/auth");
 
-// GET ALL ENTRIES FOR AN INDIVDUAL USER
+// route to render homepage
 router.get("/", async (req, res) => {
-	console.log("Here I am");
+	console.log(req.session)
+	// console.log("RENDER HOMEPAGE")
 	try {
-		// NEED TO CHANGE THIS TO THE NAME OF THE DATABASE FOR THE VARIABLE NAME, AND AWAIT ON ENTRY.FINDALL...THIS WILL BE USED TO POPULATE GRAPH
-		const dbMoodData = await Entry.findAll();
-		// THESE SHOULD ALL BE CHANGED TO ENTRY, THE DB TO THE DATABASE VARIABLE NAMED ABOVE
-		// const entries = dbMoodData.map((gallery) =>
-		// 	// WHAT DOES PLAIN: TRUE DO?
-		// 	Entry.get({ plain: true })
-		// );
-
-		// WE need to create user_page in handlebars for user to login and see this stuff
-		res.render("homepage", {
-			dbMoodData,
-			loggedIn: req.session.loggedIn,
-		});
+		if (req.session.loggedIn) {
+			res.render("homepage", {
+				loggedIn: req.session.loggedIn
+			})
+		} else {
+			res.render("login");
+		}
 	} catch (err) {
 		console.log(err);
 		res.status(500).json(err);
 	}
 });
 
-router.get("/login", (req, res) => {
+// router.get("/", async (req, res) => {
+// 	console.log(req.session.loggedIn, " ", req.session.userId);
+// 	console.log(req.session);
+// 	if (req.session.loggedIn) {
+// 		res.render("login");
+// 		return;
+// 	}
+// });
+// // 	res.render("login");
+// // });
+
+//Route to get to ENTRY section on homepage
+router.get("/entry", (req, res) => {
 	console.log(req.session.loggedIn, " ", req.session.userId);
 	console.log(req.session);
 	if (req.session.loggedIn) {
-		res.redirect("/");
+		res.redirect("/entry");
 		return;
 	}
 
-	res.render("login");
+	res.render("homepage");
 });
+
 
 // ***SHOULD BE MOVED TO API ROUTES BC OF THE RENDER
 // GET ONE ENTRY
