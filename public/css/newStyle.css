@@ -26,8 +26,8 @@
       background-color: whitesmoke;
       opacity: 0.8;
       border-radius: 10px;
-      width: 50vw;
-      min-width: 40vw;
+      width: 80%;
+      height: 50%;
       margin-top: 60px;
       z-index: 2;
   }
@@ -88,10 +88,8 @@
   }
   
   #logo {
-    max-width: 720px;
-    max-height: 420px;
-    min-width: 20px;
-    min-height: 80px;
+    width: 60%;
+    height: 40%;
   }
   
   #log {
@@ -108,10 +106,10 @@
     border-color: whitesmoke;
   }
 
-  /* #login-form {
-    align-items: center;
-  } */
-  
+  #login-form {
+    display: flex;
+    flex-direction: column;
+  } 
   ::-webkit-input-placeholder {
     text-align: center;
   }
