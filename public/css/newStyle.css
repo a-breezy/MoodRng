@@ -27,7 +27,7 @@
       background-image: linear-gradient(to bottom, rgb(255,255,255), rgba(239, 239, 239, 0.329));
       /* opacity: 0.9; */
       border-radius: 10px;
-      width: 60%;
+      width: 70%;
       height: 50%;
       /* margin-top: 5%; */
       z-index: 2;
@@ -35,11 +35,22 @@
       padding-bottom: 1%;
       padding-left: 2%;
       padding-right: 2%;
-      margin-top: 2%;
-      margin-bottom: 5%;
-
-      
-
+      /* margin-top: 2%; */
+      margin-bottom: 0%;
+  }
+  .pg2border{
+      display: flex;
+      justify-content: center;
+      /* margin-bottom: 30%; */
+      padding: 0%;
+      align-items: center;
+      flex-wrap: wrap;
+      background-image: linear-gradient(to bottom, rgb(255,255,255), rgba(239, 239, 239, 0.329));
+      opacity: 0.9;
+      border-radius: 10px;
+      width: 90%; 
+      height: auto;
+      /* height: auto; */
   }
   
   .bg {
@@ -129,7 +140,8 @@
   }
 
   #select-form{
-    width: 40vw;
+    width: 72%;
+    height: 33px;
     border-radius: 5px;
     opacity: 1;
     border-color: whitesmoke;
@@ -138,7 +150,7 @@
   }
 
   .logout_div{
-    margin-top: 5%;
+    /* margin-top: 5px; */
     display: flex;
     justify-content: center;
   }
@@ -183,11 +195,38 @@
   }
 
   #who{
-    width: 45%;
-    min-width: 45%;
-    min-height: 10%;
+    min-width: 20%;
+    width: 20%;
+    /* min-width: 45%;
+    min-height: 10%; */
     height: 10%;
     opacity: 1;
     margin-top: 2%;
+  }
+
+  #mood-graph{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center;  */
+    /* position: relative;  */
+    opacity: 1;
+    margin-bottom: 10%;
+  }
+
+  #mood-form{
+    display: flex;
+    width: 72%;
+    height: 33px;
+  }
+
+  h3{
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+    font-size: 25px;
+    font-weight:300;
+    color: slategray;
   }
   
