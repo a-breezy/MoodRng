@@ -1,4 +1,3 @@
-
 const entryFormHandler = async (event) => {
     event.preventDefault();
     
@@ -17,15 +16,13 @@ const entryFormHandler = async (event) => {
         
         alert("Entry successfully Created");
         document.location.replace('/');
-        // call message function
-        // messageGenerator();
       } else {
         alert('Failed to record entry');
       }
     }
   };
 
-// evenet listener
+// event listener for form submit
   document
   .querySelector('#entry')
   .addEventListener('submit', entryFormHandler);

@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-// CREATE new user--WORKING!!!
+// create a new user
 router.post("/", async (req, res) => {
 	try {
 		const dbUserData = await User.create({
@@ -23,36 +23,15 @@ router.post("/", async (req, res) => {
 	}
 });
 
-// ONLY KEEP IF ADDING ADMIN ROLE, OTHWERWISE POSES SECURITY ISSUE
-// router.get("/", (req, res) => {
-// 	User.findAll({
-// 	  attributes: ['id', 'username', 'first_name', 'last_name', 'email', 'password'],
-// 	  include: [
-// 		{
-// 		  model: User,
-// 		  attributes: ['id', 'username', 'first_name', 'last_name', 'email', 'password'],
-// 		},
-// 	  ],
-// 	})
-// 	  .then((userData) => res.json(userData))
-// 	  .catch((err) => {
-// 		console.log(err);
-// 		res.status(500).json(err);
-// 	  });
-//   });
-
-// LOGIN--keep in api -- WORKING!!
+// route to log in a user
 router.post("/login", async (req, res) => {
-	
 	try {
 		const dbUserData = await User.findOne({
-			
 			where: {
-				email: req.body.email
-			}
-			
+				email: req.body.email,
+			},
 		});
-		console.log("DB USER DATA", dbUserData)
+		console.log("DB USER DATA", dbUserData);
 		if (!dbUserData) {
 			res
 				.status(400)
@@ -68,18 +47,12 @@ router.post("/login", async (req, res) => {
 				.json({ message: "Incorrect email or password. Please re-enter!" });
 			return;
 		}
-// saving session data ---on client side, cookie is saved. If the two match, then user IS logged in
-		req.session.save(() => { 
-			
+		// saving session data ---on client side, cookie is saved. If the two match, then user IS logged in
+		req.session.save(() => {
 			req.session.loggedIn = true;
 			req.session.userId = dbUserData.dataValues.id;
-			
-			// console.log("IN REQ SAVE");
-			// console.log("user data:", dbUserData.dataValues.id );
-			res
-				.status(200)
-				// console.log("LOGIN ROUTE TEST")
-				.redirect("/")
+
+			res.status(200).redirect("/");
 		});
 	} catch (err) {
 		console.log(err);
@@ -87,8 +60,7 @@ router.post("/login", async (req, res) => {
 	}
 });
 
-// Logout -- WORKING!!
-// deleting session data ---on client side, cookie saved becomes useless. User must log in again 
+// route to logout user
 router.post("/logout", (req, res) => {
 	if (req.session.loggedIn) {
 		req.session.destroy(() => {
