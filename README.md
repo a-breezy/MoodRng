@@ -9,16 +9,26 @@ Fully deployed: [moodrng.com](https://moodrngwellnessapp.herokuapp.com/)
 
 ## Table of Contents
 
-  * [Installation](#installation-instructions)
+  * [Technologies Used](#technologies-used)
   * [Usage](#usage)
   * [License](#license)
   * [Collaborators](#collaborators)
   * [How to Contribute](#how-to-contribute)
   * [Questions](#questions)
 
-## Installation Instructions
+## Technologies Used
 
-No installation required visit [moodrng.com](https://moodrngwellnessapp.herokuapp.com/)
+* [bcrypt](https://www.npmjs.com/package/bcrypt)
+* [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+* [d3](https://d3js.org/)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [express](https://www.npmjs.com/package/express)
+* [express-handlebars](https://www.npmjs.com/package/express-handlebars)
+* [express-session](https://www.npmjs.com/package/express-session)
+* [handlebars](https://www.npmjs.com/package/handlebars)
+* [mysql2](https://www.npmjs.com/search?q=mysql2)
+* [nodemon](https://www.npmjs.com/package/nodemon)
+* [sequelize](https://www.npmjs.com/package/sequelize)
 
 ---
 ## Usage
