@@ -1,62 +1,46 @@
 <form class="form-example" id="entry">
-<div >
-  <div class="bgLogo">
-    <div class="border">
-      <h3>Log Your Mood</h3>
-      <select class="form-select" id="mood-form" aria-label="Default select example">
-        <option value="1">Ecstatic &#128513; </option>
-        <option value="2">Confident &#128526; </option>
-        <option value="3">Happy &#128512; </option>
-        <option value="4">Frustrated &#128534; </option>
-        <option value="5">Sad &#128532; </option>
-        <option value="6">Angry &#128545; </option>
-      </select>
-        <label for="exampleInputEmail1"></label>
-        <input
-          id="sleep-form"
-          type="number"
-          min="0"
-          class="forms"
-          placeholder="Sleep (in hours)"
-        />
-        <label for="exampleInputPassword1"></label>
-        <input
-          id="food-form"
-          class="forms"
-          placeholder="Food"
-        />
-        <label for="exampleInputEmail1"></label>
-        <input
-          id="activities-form"
-          class="forms"
-          placeholder="Activities"
-        />
-      <button
-        {{!-- onclick="changeTxt()" --}}
-        type="submit"
-        id="btn entry-button"
-        class="btn btn-outline-success">
-        SUBMIT
-      </button>
+  <div >
+    <div class="bgLogo">
+      <div class="border">
+        <h3>Log Your Mood</h3>
+        <select class="form-select" id="mood-form" aria-label="Default select example">
+          <option value="1">Ecstatic &#128513; </option>
+          <option value="2">Confident &#128526; </option>
+          <option value="3">Happy &#128512; </option>
+          <option value="4">Frustrated &#128534; </option>
+          <option value="5">Sad &#128532; </option>
+          <option value="6">Angry &#128545; </option>
+        </select>
+          <label for="exampleInputEmail1"></label>
+          <input
+            id="sleep-form"
+            type="number"
+            min="0"
+            class="forms"
+            placeholder="Sleep (in hours)"
+          />
+          <label for="exampleInputPassword1"></label>
+          <input
+            id="food-form"
+            class="forms"
+            placeholder="Food"
+          />
+          <label for="exampleInputEmail1"></label>
+          <input
+            id="activities-form"
+            class="forms"
+            placeholder="Activities"
+          />
+        <button
+          type="submit"
+          id="btn entry-button"
+          class="btn btn-outline-success">
+          SUBMIT
+        </button>
+      </div>
     </div>
   </div>
-</div>
 
 <script src="../../js/entry.js"></script>
 
 </form>
-
-{{!-- <div class="form-example">
-    <label for="sleep">Sleep:</label>
-    <input type="number" value="8" name="sleep" id="sleep" required />
-  </div>
-
-  <div class="form-example">
-    <label for="food">Food:</label>
-    <input type="text" name="food" id="food" required />
-  </div>
-
-  <div class="form-example">
-    <label for="activities">Activities:</label>
-    <input type="text" name="activities" id="activities" required />
-  </div> --}}

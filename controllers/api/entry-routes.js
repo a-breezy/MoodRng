@@ -1,14 +1,11 @@
 const router = require("express").Router();
-const { Entry, User } = require("../../models");
+const { Entry } = require("../../models");
 const withAuth = require("../../utils/auth");
-const fs = require("fs");
-const path = require("path");
 
-// CREATE NEW ENTRY
+// create new entry based on user's input
 router.post("/", async (req, res) => {
 	console.log("BODY", req.body);
 	try {
-		// NEED TO CHANGE THIS TO THE NAME OF THE DATABASE FOR THE VARIABLE NAME
 		const dbMoodData = await Entry.create({
 			user_id: req.session.userId,
 			mood: Number(req.body.mood),
@@ -37,62 +34,54 @@ router.get("/graph", async (req, res) => {
 	}
 });
 
-// GET ENTRIES 
-//// for use with graph 
+// get all entries for logged in user to input into graph
 router.get("/", (req, res) => {
 	const entryData = Entry.findAll({
 		where: {
-			user_id : req.session.userId
+			user_id: req.session.userId,
 		},
-	  attributes: [
-      "id",
-      "mood",
-      "sleep",
-      "food",
-      "activities",
-      "created_at",
-    ],
+		attributes: ["id", "mood", "sleep", "food", "activities", "created_at"],
 	})
-	  .then((entryData) => res.json(entryData))
-	  .catch((err) => {
-		console.log(err);
-		res.status(500).json(err);
-	  });
-  });
+		.then((entryData) => res.json(entryData))
+		.catch((err) => {
+			console.log(err);
+			res.status(500).json(err);
+		});
+});
 
-  // ***SHOULD BE MOVED TO API ROUTES BC OF THE RENDER
+// ***SHOULD BE MOVED TO API ROUTES BC OF THE RENDER
 // GET ONE ENTRY
 // Use the custom middleware before allowing the user to access the INDIVIDUAL ENTRIES
 // WHEN A USER CLICKS ON THE POINT ON THE PLOT, IT BRINGS UP /ENTRY/:ID
 router.get("/entry/:id", withAuth, async (req, res) => {
 	try {
-	  //  NEED TO CHANGE THIS TO THE NAME OF THE DATABASE FOR THE VARIABLE NAME AND AWAIT ON ENTRY.FINDBYPRIMARYKEY...
-	  // THIS WILL BE USED TO FIND THE FULL INFORMATION ON ANY INDIVIDUAL ENTRY AND POPULATE UNDERNEATH THE GRAPH
-	  // PERHAPS HAVE IT AUTOMATICALLY SHOW THE MOST RECENT ENTRY AS A PLACE HOLDER AND CHANGE TO WHICH EVER ONE IS CLICKED ON?
-	  const dbMoodData = await Entry.findByPk(req.params.id, {
-		include: [
-		  {
-			model: Entry,
-			attributes: [
-			  "id",
-			  "username",
-			  "mood",
-			  "sleep",
-			  "food",
-			  "activities",
-        "created_at"
+		//  NEED TO CHANGE THIS TO THE NAME OF THE DATABASE FOR THE VARIABLE NAME AND AWAIT ON ENTRY.FINDBYPRIMARYKEY...
+		// THIS WILL BE USED TO FIND THE FULL INFORMATION ON ANY INDIVIDUAL ENTRY AND POPULATE UNDERNEATH THE GRAPH
+		// PERHAPS HAVE IT AUTOMATICALLY SHOW THE MOST RECENT ENTRY AS A PLACE HOLDER AND CHANGE TO WHICH EVER ONE IS CLICKED ON?
+		const dbMoodData = await Entry.findByPk(req.params.id, {
+			include: [
+				{
+					model: Entry,
+					attributes: [
+						"id",
+						"username",
+						"mood",
+						"sleep",
+						"food",
+						"activities",
+						"created_at",
+					],
+				},
 			],
-		  },
-		],
-	  });
-	  const userGraph = dbMoodData.get({ plain: true });
-	  // THIS render needs to render within the user_page, without creating a new page
-	  // PERHAPS THIS IS A HANDLEBARD PARTIAL
-	  res.render("graph_stats", { userGraph, loggedIn: req.session.loggedIn });
+		});
+		const userGraph = dbMoodData.get({ plain: true });
+		// THIS render needs to render within the user_page, without creating a new page
+		// PERHAPS THIS IS A HANDLEBARD PARTIAL
+		res.render("graph_stats", { userGraph, loggedIn: req.session.loggedIn });
 	} catch (err) {
-	  console.log(err);
-	  res.status(500).json(err);
+		console.log(err);
+		res.status(500).json(err);
 	}
-  });
-  
+});
+
 module.exports = router;
